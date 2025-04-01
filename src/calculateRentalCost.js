@@ -14,9 +14,11 @@ function calculateRentalCost(numberOfDays) {
   basePrice = numberOfDays * 40;
 
   if (numberOfDays >= LONG_TERM) {
-    basePrice -= LONG_TERM_DISCOUNT;
-  } else if (numberOfDays >= SHORT_TERM) {
-    basePrice -= SHORT_TERM_DISCOUNT;
+    return basePrice - LONG_TERM_DISCOUNT;
+  }
+
+  if (numberOfDays >= SHORT_TERM) {
+    return basePrice - SHORT_TERM_DISCOUNT;
   }
 
   return basePrice;
